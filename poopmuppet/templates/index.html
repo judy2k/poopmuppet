@@ -3,7 +3,11 @@
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="icon" sizes="192x192" href="/static/icon.png">
 
 	<meta property="og:url" content="https://scottish-swearing.herokuapp.com/" />
 	<meta property="og:type" content="article" />
@@ -30,7 +34,7 @@
 </div>
 <h2 id="swear">{{ swear }}</h2>
 <div class="actions">
-	<a href="#" id="reload_button"><img src="/static/refresh.svg" width="72" height="64"
+	<a href="#" id="reload_button"><img src="/static/spinner11.svg" width="64" height="64"
 										title="More!"></a>
 	<br>
 	<br>
@@ -49,29 +53,42 @@
 	}(document, 'script', 'twitter-wjs');</script>
 </div>
 <footer>
-	<div>
-		<ul>
-			<li>
-				Swearing by <a href="https://github.com/judy2k">@judy2k</a>
-			</li>
-			<li>
-				FitText script from <a href="https://github.com/adactio/FitText.js">@adactio</a>
-			</li>
-			<li>
-				Icon made by <a href="http://www.flaticon.com/authors/freepik">Freepik</a> from
-				<a href="http://www.flaticon.com/">www.flaticon.com</a>
-			</li>
-		</ul>
+	<div class="more_info">
+		<a id="more_info"><img src="/static/question.svg" width="32"></a>
 	</div>
+	<ul id="info" class="info" hidden >
+		<li>
+			Swearing by <a href="https://twitter.com/judy2k">@judy2k</a>
+		</li>
+		<li>
+			FitText script from <a href="https://github.com/adactio/FitText.js">@adactio</a>
+		</li>
+		<li>
+			Icons from <a href="https://icomoon.io/">IcoMoon</a>
+		</li>
+	</ul>
 </footer>
 
 </body>
 </html>
 <script src="/static/fittext.js"></script>
 <script>
-	window.fitText(document.getElementById("swear"))
-	document.getElementById("reload_button").onclick = function() {
-		location.reload(true);
+	window.onload = function() {
+
+		window.fitText(document.getElementById("swear"))
+		document.getElementById("reload_button").onclick = function() {
+			ga('send', 'event', 'reload', 'press')
+			location.reload(true);
+		}
+		var mi = document.getElementById("more_info");
+		mi.onclick = function() {
+			var info = document.getElementById("info");
+			if (info.getAttribute("hidden") !== null) {
+				info.removeAttribute("hidden");
+			} else {
+				info.setAttribute("hidden", "true");
+			}
+		}
 	}
 </script>
 <script>

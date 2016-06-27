@@ -15,7 +15,6 @@ footer {
 	bottom: 0px;
 	width: 100%;
 	background-color: white;
-	z-index: -1;
 }
 
 #reload {
@@ -27,4 +26,21 @@ footer {
 .actions {
 	text-align: center;
 	background-color: white;
+}
+.more_info {
+	text-align: center;
+}
+.info {
+	background-color: aliceblue;
+	margin: 0;
+	padding: 1em 1em;
+}
+ul.info {
+	list-style-position: inside;
+}
+.info a:link,
+.info a:visited,
+.info a:hover,
+.info a:active {
+	color: steelblue;
 }
