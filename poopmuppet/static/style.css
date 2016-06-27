@@ -14,6 +14,8 @@ footer {
 	position: fixed;
 	bottom: 0px;
 	width: 100%;
+	background-color: white;
+	z-index: -1;
 }
 
 #reload {
@@ -24,4 +26,5 @@ footer {
 }
 .actions {
 	text-align: center;
+	background-color: white;
 }
