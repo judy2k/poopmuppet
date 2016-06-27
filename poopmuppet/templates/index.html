@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/static/base-min.css">
 <link rel="stylesheet" href="/static/style.css">
 <div id="reload">
-	<a href="#"><img src="/static/refresh.svg" width="36" height="32" title="More!"></a>
+	<a href="#" id="reload_button"><img src="/static/refresh.svg" width="36" height="32" title="More!"></a>
 </div>
 <h2 id="swear">{{swear}}</h2>
 
@@ -10,7 +10,7 @@
 	<div>
 		<ul>
 			<li>
-				Swearing by <a href="">@judy2k</a>
+				Swearing by <a href="https://github.com/judy2k">@judy2k</a>
 			</li>
 			<li>
 				FitText script from <a href="https://github.com/adactio/FitText.js">@adactio</a>
@@ -26,4 +26,7 @@
 <script src="/static/fittext.js"></script>
 <script>
 	window.fitText(document.getElementById("swear"))
+	document.getElementById("reload_button").onclick = function(){
+		location.reload(true);
+	}
 </script>
