@@ -3,7 +3,7 @@
 import os
 from random import choice, randint
 
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -100,11 +100,10 @@ def swear():
 
 @app.route("/")
 def home():
-    return swear().upper()
+    return render_template('index.html', swear=swear().upper())
 
 
 def main():
     debug = os.getenv('DEBUG', 'FALSE').strip().lower() in ['on', 'true', 'yes', '1', 'aye']
     port = int(os.getenv('PORT', '5000'))
-    print(port)
     app.run(host='0.0.0.0', port=port, debug=debug)

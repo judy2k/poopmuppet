@@ -1,2 +1,29 @@
 <!doctype html>
-<h2>{{swear}}</h2>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/base-min.css">
+<link rel="stylesheet" href="/static/style.css">
+<div id="reload">
+	<a href="#"><img src="/static/refresh.svg" width="36" height="32" title="More!"></a>
+</div>
+<h2 id="swear">{{swear}}</h2>
+
+<footer>
+	<div>
+		<ul>
+			<li>
+				Swearing by <a href="">@judy2k</a>
+			</li>
+			<li>
+				FitText script from <a href="https://github.com/adactio/FitText.js">@adactio</a>
+			</li>
+			<li>
+				Icon made by <a href="http://www.flaticon.com/authors/freepik">Freepik</a> from
+				<a href="http://www.flaticon.com/">www.flaticon.com</a>
+			</li>
+		</ul>
+	</div>
+</footer>
+
+<script src="/static/fittext.js"></script>
+<script>
+	window.fitText(document.getElementById("swear"))
+</script>
