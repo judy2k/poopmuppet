@@ -1,3 +1,10 @@
+#swear {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: normal;
+	line-height: 1;
+	text-align: center;
+}
+
 footer {
 	clear: both;
 	padding: 0;
