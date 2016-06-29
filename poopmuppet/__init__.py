@@ -43,6 +43,7 @@ beetle
 badger
 mole
 toad
+spanner
 """.strip().splitlines()
 
 POST_SWEAR = """

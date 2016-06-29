@@ -3,6 +3,10 @@
 	font-weight: normal;
 	line-height: 1;
 	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: -0.03em;
+	font-kerning: normal;
+	text-rendering: optimizeLegibility;
 }
 
 footer {
@@ -43,4 +47,7 @@ ul.info {
 .info a:hover,
 .info a:active {
 	color: steelblue;
+}
+.primary {
+	fill: red;
 }
