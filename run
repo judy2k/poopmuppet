@@ -1,6 +1,0 @@
-#!/usr/bin/env python
-
-import poopmuppet
-
-if __name__ == '__main__':
-    poopmuppet.main()
