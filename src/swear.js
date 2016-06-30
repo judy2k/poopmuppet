@@ -22,7 +22,7 @@
 		'burger',
 		'cake',
 		'crumpet',
-		'curtains',
+		'curtain',
 		'divot',
 		'ferret',
 		'fiddle',
@@ -62,6 +62,7 @@
 		'crumpet',
 		'gibbon',
 		'hamster',
+		'lettuce',
 		'mole',
 		'muffin',
 		'muffin',
@@ -117,4 +118,3 @@
 	};
 
 })();
-
