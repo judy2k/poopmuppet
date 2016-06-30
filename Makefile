@@ -14,16 +14,16 @@ build:
 	mkdir build
 
 build/%.js: src/%.js
-	cp $< $@
+	uglifyjs $< --compress --mangle --output $@
 
 build/%.css: src/%.css
-	cp $< $@
+	cssnano < $< > $@
 
 build/%.png: src/%.png
 	cp $< $@
 
 build/index.html: src/index.html
-	cp $< $@
+	html-minifier --html5 --minify-js --collapse-whitespace --output $@ $<
 
 .PHONY: clean
 clean:
