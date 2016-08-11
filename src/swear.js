@@ -92,17 +92,27 @@
 	var choice = function(arr) {
 		return arr[getRandomInt(0, arr.length)]
 	};
+	var wordChooser = function(arr) {
+		return function() {
+			return choice(arr);
+		}
+	};
+	var preSwear = wordChooser(PRE_SWEAR),
+		postAdjective = wordChooser(POST_ADJECTIVE),
+		preWord = wordChooser(PRE_WORD),
+		postWord = wordChooser(POST_WORD),
+		postSwear = wordChooser(POST_SWEAR);
 	var adjective = function() {
 		//shit-breathing
-		return choice(PRE_SWEAR) + '-' + choice(POST_ADJECTIVE);
+		return preSwear() + '-' + postAdjective();
 	};
 	var noun = function() {
 		if (randint(0, 2) < 2) {
 			// shitweasel
-			return choice(PRE_SWEAR) + choice(POST_WORD);
+			return preSwear() + postWord();
 		} else {
 			// muppetshitter
-			return choice(PRE_WORD) + choice(POST_SWEAR);
+			return preWord() + postSwear();
 		}
 	};
 
