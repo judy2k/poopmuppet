@@ -54,7 +54,6 @@
 		'shitter'
 	];
 	var PRE_WORD = [
-		'blobfish',
 		'bunny',
 		'cabbage',
 		'cake',
