@@ -77,15 +77,20 @@
 }(document, 'script', 'twitter-wjs');
 </script>
 <script>
-	var setSwear = function() {
-		var s = swear();
-		document.getElementById("swear").textContent = s;
-	};
+
 	window.onload = function() {
-		window.fitText(document.getElementById("swear"))
-		document.getElementById("reload_button").onclick = function(evt) {
+		var swearText = document.getElementById("swear"),
+			reloadButton = document.getElementById("reload_button");
+		var setSwear = function() {
+			var s = swear();
+			swearText.textContent = s;
+		};
+
+		window.fitText(swearText);
+		reloadButton.onclick = function(evt) {
 			ga('send', 'event', 'reload', 'press')
 			setSwear();
+			// reloadButton.style.transform = "rotate(180deg)";
 			evt.preventDefault();
 			return false;
 		}
