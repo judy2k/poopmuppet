@@ -116,14 +116,16 @@
 		}
 	};
 
-	window.swear = function() {
-		if (randint(0, 2) < 2) {
-			// shit-breathing muppetshitter
-			return adjective() + ' ' + noun();
-		} else {
-			// crabfucker
-			return noun();
+	module.exports = {
+		swear: function() {
+			if (randint(0, 2) < 2) {
+				// shit-breathing muppetshitter
+				return adjective() + ' ' + noun();
+			} else {
+				// crabfucker
+				return noun();
+			}
 		}
-	};
+	}
 
 })();

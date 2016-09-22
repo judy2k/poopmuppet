@@ -64,8 +64,8 @@
 
 </body>
 </html>
-<script src="fittext.js"></script>
-<script src="swear.js"></script>
+<!-- <script src="fittext.js"></script>
+<script src="swear.js"></script> -->
 <script>!function(d, s, id) {
 	var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
 	if (!d.getElementById(id)) {
@@ -76,38 +76,7 @@
 	}
 }(document, 'script', 'twitter-wjs');
 </script>
-<script>
-
-	window.onload = function() {
-		var swearText = document.getElementById("swear"),
-			reloadButton = document.getElementById("reload_button");
-		var setSwear = function() {
-			var s = swear();
-			swearText.textContent = s;
-		};
-
-		window.fitText(swearText);
-		reloadButton.onclick = function(evt) {
-			ga('send', 'event', 'reload', 'press')
-			setSwear();
-			// reloadButton.style.transform = "rotate(180deg)";
-			evt.preventDefault();
-			return false;
-		}
-		var mi = document.getElementById("more_info");
-		mi.onclick = function(evt) {
-			var info = document.getElementById("info");
-			if (info.getAttribute("hidden") !== null) {
-				info.removeAttribute("hidden");
-			} else {
-				info.setAttribute("hidden", "true");
-			}
-			evt.preventDefault();
-			return false;
-		};
-		setSwear();
-	};
-</script>
+<script src="bundle.js" ></script>
 <script>
 	(function(i, s, o, g, r, a, m) {
 		i['GoogleAnalyticsObject'] = r;
@@ -123,5 +92,4 @@
 
 	ga('create', 'UA-19887037-1', 'auto');
 	ga('send', 'pageview');
-
 </script>

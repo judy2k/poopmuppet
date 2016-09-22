@@ -1,4 +1,5 @@
-JS_TARGETS := $(patsubst src/%,build/%,$(wildcard src/*.js))
+# JS_TARGETS := $(patsubst src/%,build/%,$(wildcard src/*.js))
+JS_TARGETS := build/bundle.js
 CSS_TARGETS := $(patsubst src/%,build/%,$(wildcard src/*.css))
 PNG_TARGETS := $(patsubst src/%,build/%,$(wildcard src/*.png))
 
@@ -13,8 +14,8 @@ _build: build build/index.html $(TARGETS)
 build:
 	mkdir build
 
-build/%.js: src/%.js
-	uglifyjs $< --compress --mangle --output $@
+build/bundle.js: src/*.js
+	webpack
 
 build/%.css: src/%.css
 	cssnano < $< > $@
@@ -28,3 +29,7 @@ build/index.html: src/index.html
 .PHONY: clean
 clean:
 	rm -rf build/*
+
+run:
+	python -m http.server &
+	watchmedo shell-command -c make  src
