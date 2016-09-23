@@ -30,6 +30,8 @@ build/index.html: src/index.html
 clean:
 	rm -rf build/*
 
-run:
-	python -m http.server &
-	watchmedo shell-command -c make  src
+server:
+	python -m http.server
+
+watch:
+	watchmedo shell-command -c make src
