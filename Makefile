@@ -14,7 +14,7 @@ _build: build build/index.html $(TARGETS)
 build:
 	mkdir build
 
-build/bundle.js: src/*.js
+build/bundle.js: src/*.js src/*.jsx
 	webpack
 
 build/%.css: src/%.css

@@ -1,10 +1,10 @@
-#swear {
+.swearBox {
 	margin: 0;
 	position: relative;
 	height: 3em;
 }
 
-#swear > .swearContent {
+.swearBox > .swearContent {
 	position:absolute;
 	top:50%;
 	transform: translateY(-50%);
@@ -32,15 +32,6 @@ footer {
 	background-color: white;
 }
 
-#reload_button {
-	padding-top: 4px;
-	display: inline-block;
-	transition: transform 500ms ease;
-}
-
-#reload_button:active {
-	transform: rotate(180deg);
-}
 .actions {
 	text-align: center;
 	background-color: white;
